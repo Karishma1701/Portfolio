@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap');
+
+:root {
+    --color-body: #555555;
+    --color-heading: #333333;
+    --color-base: #ffffff;
+    --color-base2: #f0f9ff;
+    --color-brand: #00b4d8;
+    --color-brand2: #0077b6;
+    --sidbar-width: 240px;
+    --font-base: "Bai Jamjuree";
+}
+
+body {
+    background-color: var(--color-base2);
+    color: var(--color-body);
+    font-family: var(--font-base), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--color-heading);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-body);
+    transition: all 0.4s ease;
+}
+
+a:hover {
+    color: var(--color-brand);
+}
+
+img {
+    width: 100%;
+}
+
+.text-brand {
+    color: var(--color-brand);
+}
+
+.bg-base {
+    background-color: var(--color-base);
+}
+
+.full-height {
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.shadow-effect {
+    transition: all 0.5s;
+}
+
+.shadow-effect:hover {
+    box-shadow: -6px 6px 0 0 var(--color-brand);
+}
+
+.iconbox {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    background-color: var(--color-brand);
+    color: white;
+}
+
+/* NAVBAR STYLES */
+.navbar {
+    background-color: var(--color-brand2);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 0.5rem 1rem;
+}
+
+/* Desktop menu styles */
+.navbar .navbar-nav {
+    flex-direction: row;
+}
+
+.navbar .navbar-nav .nav-item {
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar .nav-link {
+    color: var(--color-base) !important;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+/* Underline effect */
+.navbar .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-brand);
+    transition: width 0.3s ease;
+}
+
+.navbar .nav-link:hover::after {
+    width: 100%;
+}
+
+/* Mobile menu styles */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--color-base);
+        padding: 1rem;
+        margin-top: 0.5rem;
+        border-radius: 8px;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .navbar-nav {
+        flex-direction: column !important;
+        padding-top: 10px;
+    }
+    
+    .navbar-nav .nav-item {
+        margin: 5px 0 !important;
+    }
+    
+    .navbar-toggler {
+        display: block !important; /* Ensure toggle button is always visible on mobile */
+        border: none;
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .navbar-toggler:focus {
+        box-shadow: none;
+    }
+    
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 180, 216, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+}
+
+/* Make sure content doesn't hide behind fixed navbar */
+#content-wrapper {
+    padding-top: 80px;
+}
+
+@media (max-width: 767.98px) {
+    #content-wrapper {
+        padding-top: 70px;
+    }
+}
+/* Add to your style.css */
+#home {
+    padding-top: 100px; /* Add space for the fixed navbar */
+}
+
+#home img {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    height: 50%;
+}
+
+#home img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+@media (max-width: 991.98px) {
+    #home {
+        text-align: center;
+        padding-top: 80px;
+    }
+    
+    #home .btn {
+        display: block;
+        margin: 0 auto 15px;
+        width: fit-content;
+    }
+    
+    #home .link-custom {
+        display: block;
+        width: fit-content;
+        margin: 0 auto;
+    }
+}
+
+/* BTN */
+.btn {
+    padding: 12px 28px;
+    font-weight: 700;
+}
+
+.btn-brand {
+    background-color: var(--color-brand);
+    border-color: var(--color-brand);
+    color: white;
+}
+
+.btn-brand:hover,
+.btn-brand:focus {
+    background-color: var(--color-brand2);
+    color: white;
+    border-color: var(--color-brand2);
+}
+
+.link-custom {
+    font-weight: 700;
+    position: relative;
+}
+
+.link-custom::after {
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--color-brand);
+    position: absolute;
+    left: 0;
+    top: 110%;
+    transition: all 0.4s;
+}
+
+.link-custom:hover::after { 
+    width: 100%;
+}
+
+/* skills section styling */
+.skills {
+    padding: 80px 0;
+    background-color: white;
+}
+
+.skills .max-width {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.skills .title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    color: var(--color-heading);
+}
+
+
+.skills .title::after {
+    content: "what i know";
+    display: block;
+    font-size: 20px;
+    color: var(--color-brand);
+    margin-top: 8px;
+}
+.skills .skills-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.skills .skills-content .column {
+    width: calc(50% - 30px);
+    max-width: 500px;
+}
+
+.skills .skills-content .left .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--color-heading);
+}
+
+.skills .skills-content .left p {
+    text-align: justify;
+}
+
+.skills .skills-content .left a {
+    display: inline-block;
+    background: var(--color-brand);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid var(--color-brand);
+    transition: all 0.3s ease;
+}
+
+.skills .skills-content .left a:hover {
+    color: var(--color-brand);
+    background: none;
+}
+
+.skills .skills-content .right .bars {
+    margin-bottom: 15px;
+}
+
+.skills .skills-content .right .info {
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.skills .skills-content .right span {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--color-heading);
+}
+
+.skills .skills-content .right .line {
+    height: 5px;
+    width: 100%;
+    background: #e0e0e0;
+    position: relative;
+}
+
+.skills .skills-content .right .line::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--color-brand);
+}
+
+/* Skills Section */
+.skill-card {
+    padding: 20px;
+    transition: all 0.3s ease;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.skill-icon-box {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--color-brand);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    color: var(--color-brand);
+}
+
+.skill-card:hover .skill-icon-box {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 180, 216, 0.1);
+    background: rgba(0, 180, 216, 0.2);
+}
+
+.skill-card h5 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 15px !important;
+    color: var(--color-heading);
+}
+
+/* Animation for skill items */
+[data-aos="zoom-in"] {
+    transform: scale(0.5);
+    opacity: 0;
+    transition-property: transform, opacity;
+}
+
+[data-aos="zoom-in"].aos-animate {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Section spacing */
+#skills {
+    padding-bottom: 100px;
+}
+
+/* SERVICES SECTION */
+.service {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service p {
+    flex-grow: 1; /* Makes the paragraph take up remaining space */
+    margin-bottom: 1rem; /* Adds space between paragraph and bottom */
+}
+
+/* WORK SECTION */
+.card-custom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-custom-content {
+    flex-grow: 1; /* Makes content take up remaining space */
+}
+
+.row.gy-4 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row.gy-4 > [class*='col-'] {
+    display: flex;
+}
+/* CARD */
+.card-custom {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 180, 216, 0.1);
+}
+
+.card-custom .card-custom-image {
+    overflow: hidden;
+}
+
+.card-custom .card-custom-image img {
+    transition: all 0.4s ease;
+}
+
+.card-custom:hover .card-custom-image img {
+    transform: scale(1.1);
+}
+
+/* CONTACT */
+#contact {
+    background-color: var(--color-base2);
+}
+
+#contact .form-control {
+    background-color: white;
+    border-color: #e0e0e0;
+    color: var(--color-body);
+}
+
+#contact .form-control:focus {
+    border-color: var(--color-brand);
+    box-shadow: 0 0 0 0.25rem rgba(0, 180, 216, 0.25);
+}
+
+#contact .form-control::placeholder {
+    color: #aaaaaa;
+}
+
+#contact input.form-control {
+    height: 44px;
+}
+
+/* SOCIAL ICONS */
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 100px;
+    font-size: 24px;
+    color: var(--color-brand);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: var(--color-brand);
+    color: white;
+    transform: translateY(-3px);
+}
